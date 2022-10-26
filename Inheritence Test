@@ -1,0 +1,45 @@
+import java.awt.*;
+
+public class BetterRectangle extends Rectangle {
+    public BetterRectangle(int xleft, int yleft,int width,int height){
+    super.setSize(width,height);
+    }
+    public int getAREA(){
+    return width*height;
+    }
+    public int getPerimeter(){
+    return  (width+height)*2;
+    }
+
+}
+
+
+
+
+
+
+
+import org.testng.annotations.Test;
+
+import static org.testng.AssertJUnit.assertEquals;
+
+public class BetterRectengleTest {
+    BetterRectangle betterRectangle;
+    //public void  BetterRectangleTest();
+        @Test
+                public void getAreaTest()
+        {
+            betterRectangle = new BetterRectangle(3,3, 10,10);
+            int area = betterRectangle.getAREA();
+            assertEquals(area,100);
+        }
+        @Test
+    public void getPerimeter(){
+            betterRectangle = new BetterRectangle(3,3,10,10);
+            int perimeter = betterRectangle.getPerimeter();
+            assertEquals(perimeter,40);
+        }
+
+
+
+    }
